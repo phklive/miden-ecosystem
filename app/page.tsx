@@ -16,11 +16,11 @@ const allProjects: Project[] = [
     id: 1,
     name: 'Miden Name Service',
     description: 'A decentralized naming system for the Miden ecosystem.',
-    link: 'https://miden-name-service-p55kix6fq-paulhenryks-projects.vercel.app/',
+    link: 'https://miden-name-service.vercel.app/',
     imageUrl: 'miden_name_service.png',
     tags: ['Naming', 'Utility', 'Infrastructure']
   },
-
+  // Add more projects here
 ];
 
 // --- Helper function to get unique tags ---
@@ -76,17 +76,26 @@ export default function MidenEcosystemPage() {
   }, [searchTerm, selectedTags]);
 
   return (
-    // --- UPDATED: Background uses gradient, removed style attribute ---
     <main
-      className="min-h-screen text-white p-8 md:p-16 bg-gradient-to-br from-gray-900 via-purple-950 to-black" // Example gradient: Dark Gray -> Deep Purple -> Black
+      className="min-h-screen text-white p-8 md:p-16 bg-gradient-to-br from-gray-900 via-purple-950 to-black"
     >
       {/* Content wrapper */}
       <div className="container mx-auto relative z-10">
 
-        {/* Main Title */}
-        <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-center mb-10 text-white drop-shadow-lg">
+        {/* --- MODIFIED: Title size reduced, margin adjusted --- */}
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-4 text-white drop-shadow-lg">
           Miden Ecosystem
         </h1>
+
+        {/* --- ADDED: Subtitle --- */}
+        <p className="text-lg md:text-xl text-center text-purple-200 max-w-3xl mx-auto mb-10 font-light">
+          Discover all the projects building on Miden.
+          {/* Alternative phrasing options:
+              "Your central hub for discovering projects building within the Miden ecosystem."
+              "Explore the diverse range of applications and tools in the Miden universe."
+              "An overview of projects leveraging the power of Miden."
+          */}
+        </p>
 
         {/* Search Bar */}
         <div className="mb-8 flex justify-center">
@@ -132,7 +141,6 @@ export default function MidenEcosystemPage() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                // Slightly updated card style for modern look
                 className="group flex flex-col bg-gradient-to-br from-gray-900/70 via-gray-800/60 to-gray-900/70 backdrop-blur-lg rounded-xl shadow-xl overflow-hidden hover:shadow-purple-600/50 transform hover:-translate-y-1.5 transition-all duration-300 ease-in-out border border-gray-700/50 hover:border-purple-500/80"
               >
                 <img
@@ -168,7 +176,6 @@ export default function MidenEcosystemPage() {
             ))}
           </div>
         ) : (
-          // --- MODIFIED: No projects found message - Box removed ---
           <div className="text-center text-gray-400 mt-16 py-10">
             <p className="text-2xl mb-2 font-semibold">No projects found</p>
             <p>Try adjusting your search or clearing tag filters.</p>

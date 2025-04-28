@@ -20,7 +20,14 @@ const allProjects: Project[] = [
     imageUrl: 'miden_name_service.png',
     tags: ['Naming', 'Utility', 'Infrastructure']
   },
-  // Add more projects here
+  {
+    id: 2,
+    name: 'Miden Counter Contract',
+    description: 'A counter contract deployed on the Miden blockchain.',
+    link: 'https://miden-counter-contract.vercel.app/',
+    imageUrl: 'miden_counter_contract.png',
+    tags: ['Contract', 'Example', 'Dapp']
+  }
 ];
 
 // --- Helper function to get unique tags ---
